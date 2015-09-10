@@ -34,6 +34,15 @@ def objective_function(vector)
 end
 
 
+# Select a random value from a given interval.
+# The minimum and maximum values are included.
+# Param::   min [Numeric] The lower end of the interval.
+# Param::   max [Numeric] The upper end of the interval.
+# Return::  [Numeric] The random value.
+def random_in_bounds(min, max)
+    return min + ((max - min) * rand())
+end
+
 # Create a d-dimensional vector with random values ranging from the minimum
 # and maximum values specified by the search space dimensions.
 # Param::   minmax [Array] The minimum and maximum values for each dimension
@@ -41,9 +50,10 @@ end
 # Return::  [Array] The created random vector.
 def random_vector(minmax)
     return Array.new(minmax.size) do |i|
-        minmax[i][0] + ((minmax[i][1] - minmax[i][0]) * rand())
+        random_in_bounds(minmax[i][0], minmax[i][1])
     end
 end
+
 
 # Search for the best solution in a given search space.
 # Randomly select and evaluate candidates for a given amount of iterations.
