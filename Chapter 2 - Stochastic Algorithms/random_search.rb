@@ -3,7 +3,7 @@
 # A random solution is sampled from the search space using a uniform probability
 # distribution. Each sample is independent of previous samples (the algorithm
 # has no memory).
-# A solution is stored if it is better than the currently best solution.
+# A solution is stored if its cost is lower than the currently best solution's.
 # After a given amount of iterations, the best solution is returned.
 # Note that it cannot be guaranteed that all solutions in the search space will
 # be tested. Thus, a globally best solution is not guaranteed.
@@ -25,10 +25,10 @@
 # Date::    10-09-2015
 
 
-# Calculate the cost of a given vector.
+# Calculate the cost of a given vector with this cost function.
 # The cost function is f = sum_{n, i=1}(x_i^2).
 # Param::   vector [Array] The vector whose cost has to be determined.
-# Return::  [Integer] The cost of the vector given this function.
+# Return::  [Float] The cost of the vector given this function.
 def objective_function(vector)
     return vector.inject(0) {|sum, x| sum + (x ** 2.0)}
 end
