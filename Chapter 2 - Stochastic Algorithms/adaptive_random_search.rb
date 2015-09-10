@@ -122,10 +122,10 @@ end
 # Param::   l_factor [Numeric] The factor for the largest step size.
 # Param::   iter_mult [Numeric] The factor that determines which iterations will
 # =>        be large.
-# Param::   max_no_impr [Numeric] The factor that.
+# Param::   max_no_improv [Numeric] The factor that.
 # Return::  [Array] The vector that represents the currently best solution.
 def search(max_iterations, bounds, init_factor, s_factor, l_factor,
-        iter_mult, max_no_impr)
+        iter_mult, max_no_improv)
     step_size = (bounds[0][1] - bounds[0][0]) * init_factor
     # Initialize a random starting candidate solution from the search space and
     # evaluate its cost.
@@ -148,7 +148,7 @@ def search(max_iterations, bounds, init_factor, s_factor, l_factor,
             count = 0
         else
             count += 1
-            count, step_size = 0, (step_size / s_factor) if count >= max_no_impr
+            count, step_size = 0, (step_size / s_factor) if count >= max_no_improv
         end
         # Print the cost of the currently best solution.
         puts " > iteration=#{(iteration+1)}, current=#{current[:cost]}"
@@ -167,10 +167,10 @@ if __FILE__ == $0
     s_factor = 1.3
     l_factor = 3.0
     iter_mult = 10
-    max_no_impr = 30
+    max_no_improv = 30
     # Execute the algorithm.
     best = search(max_iterations, bounds, init_factor, s_factor, l_factor,
-        iter_mult, max_no_impr)
+        iter_mult, max_no_improv)
     # Print the best result.
     puts "Done. Best Solution: c=#{best[:cost]},
         v=#{best[:vector].inspect}"
