@@ -115,6 +115,7 @@ end
 # At the end of the iterations, return the current solution.
 # Note that the current solution is always the currently best solution as well.
 # Param::   max_iterations [Integer] The amount of iterations made before
+# =>        returning an answer.
 # Param::   bounds [Array] The d-dimensional space of potential solutions
 # =>        returning the currently best solution.
 # Param::   init_factor [Numeric] The factor for the initialized step size.
@@ -122,7 +123,8 @@ end
 # Param::   l_factor [Numeric] The factor for the largest step size.
 # Param::   iter_mult [Numeric] The factor that determines which iterations will
 # =>        be large.
-# Param::   max_no_improv [Numeric] The factor that.
+# Param::   max_no_improv [Integer] The maximum amount of steps without
+# =>        improvement.
 # Return::  [Array] The vector that represents the currently best solution.
 def search(max_iterations, bounds, init_factor, s_factor, l_factor,
         iter_mult, max_no_improv)
