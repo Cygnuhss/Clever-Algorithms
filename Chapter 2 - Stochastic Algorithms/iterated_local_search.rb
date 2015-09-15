@@ -14,8 +14,8 @@
 # The standard performed problem is a Travelling Salesman Problem called 'Berlin52'.
 # The cost function is the distance travelled in a round trip through all cities.
 # The optimal solution for Berlin52 is 7542 units.
-# Other problems can be defined through changing the one_max and by changing the
-# configurations.
+# Other problems can be defined through changing the distance calculation and by
+# changing the configurations.
 #
 # From Clever Algorithms: Nature-Inspired Programming Recipes.
 # Pages 44–49.
