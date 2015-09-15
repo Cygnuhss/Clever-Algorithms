@@ -3,14 +3,13 @@
 # from a global search.
 #
 # A random solution is sampled from the search space and serves as the seed for
-# the walk towards an optimal solution.
-# Each step, a random neighboring solution is selected and evaluated. If its
-# cost is better than the current best solution, the neighbor is saved as the
-# current best solution.
+# the walk towards an optimal solution. Each solution is a permutation of a
+# round trip through several cities, where each city is visited only and exactly
+# once.
+# Each step, a permutation is selected and evaluated. If its cost is better than
+# the current best solution, the permutation is saved as the current best solution.
 # After a given amount of iterations, the best solution is returned.
-# The algorithm can be restarted for an improved result (Restart Hill Climbing)
-# or run concurrently so that multiple runs are performed simultaneously
-# (Parallel Hill Climbing).
+# The algorithm can be restarted for an improved result.
 #
 # The standard performed problem is a Travelling Salesman Problem called 'Berlin52'.
 # The cost function is the distance travelled in a round trip through all cities.
